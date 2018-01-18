@@ -1,0 +1,243 @@
+.main{
+	padding: 15px;
+}
+
+
+.component1{
+	height: 50px;
+}
+
+.dashboardCards{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 25px;
+}
+
+.dashboardComponent1{
+	height: 120px;
+	background-color: #fff;
+	padding: 0px;
+	border-radius: 5px;
+	margin-top: 25px;
+	min-width: 160px;
+}
+
+.userComponent{
+	background-color: #95D1E8;
+}
+
+.messageComponent{
+	background-color: #E66D6D;
+}
+
+.notificationComponent{
+	background-color: #FBE44F;
+}
+
+.subscriptionComponent{
+	background-color: #5AFB4F;
+}
+
+.dashboardComponentHeader{
+	border-radius: 5px 5px 0 0;
+	height: 90px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #fff;
+}
+
+.dashboardComponentInfoBar{
+	height: 30px;
+	background-color: rgba(0,0,0,0.2);
+	line-height: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+}
+
+.cardLeftArea{
+	float: left;
+	height: 100%;
+}
+
+.cardRightArea{
+	float: right;
+	display: flex;
+	height: 100%;
+}
+
+.cardNumber{
+	font-size: 30px;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.cardIcon{
+	font-size: 60px;
+	float: right;
+	display: flex;
+	align-items: center;
+	transition: font-size .5s ease-in-out
+}
+
+.userComponent:hover .cardIcon{
+	font-size: 70px;
+}
+
+.messageComponent:hover .cardIcon{
+	font-size: 70px;
+}
+
+.notificationComponent:hover .cardIcon{
+	font-size: 70px;
+}
+
+.subscriptionComponent:hover .cardIcon{
+	font-size: 70px;
+}
+
+.card-body{
+	background-color: #fff
+}
+
+.chartDistribution{
+	margin-top: 15px;
+}
+
+.widgets{
+	padding: 15px;
+	padding-top: 0px;
+}
+
+.box{
+	background-color: #fff;
+	border-top: 10px solid #acb;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	margin-top: 15px;
+}
+
+.box-header{
+	margin:10px;
+}
+
+.chatBox{
+	padding: 0;
+    height: 350px;
+}
+
+.chatWindowHeader{
+    width: 100%;
+	height: 40px;
+    background: white;
+    line-height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chatOnlineIndicator{
+	font-size: 10px;
+	color: green;
+	vertical-align: middle;
+}
+
+.leftSection{
+	float: left;
+}
+
+.rightSection{
+	float: right;
+}
+
+.chatWindow{
+	width: 100%;
+	height: 250px;
+    border-top: 1px solid #C1C2C4;
+    background: #fff;
+    overflow: auto;
+}
+
+.chatMessage{
+	display: table;
+	float: right;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.chatWindowDP{
+	    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.chatSingleMessage{
+	display: table-cell;
+	width: 100%;
+	vertical-align: middle;
+    background: #D2D3DB;
+	border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+.chatMessageImage{
+	background: #fff;
+}
+
+.chatWindowMessageSendingBar{
+	display: flex;
+	align-self: center;
+	height: 50px;
+	background-color: #fff;
+	border-top: 1px solid #C1C2C4;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.chatMessageInput{
+	outline: none !important;
+    box-shadow: none;
+    border: none;
+	height: 40px;
+	font-size: 15px;
+}
+
+.chatMessageSendButton{
+	height: 40px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.chatMessageSendButton span{
+	border: 0px;
+	color: #fff;
+	font-size: 15px;
+
+}
+
+.chatWindowMessageWrapper{
+	display: flex;
+	align-self: center;
+}
+
+@media only screen and (max-width: 460px) {
+
+	.cardRightArea{
+		display: none;
+	}
+
+	.cardLeftArea{
+		width: 100%;
+	}
+
+	.dashboardComponentHeader{
+		text-align: center;
+	}
+
+}

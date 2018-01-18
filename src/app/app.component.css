@@ -1,0 +1,104 @@
+.sidebar{
+	transition: width 0.3s ease-in-out;
+	position: fixed;
+	z-index: 100000;
+	bottom: 0;
+    background: #1B8DD0;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-family: Helvetica;
+    overflow: auto;
+}
+
+.sidebarWrapper{
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+}
+
+.main{
+	background-color: #22465B;
+}
+
+.sidebarHeading{
+	font-size: 20px;
+	height: 60px;
+    background-color: #1E7DB5;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.sidebarBars{
+	cursor: pointer;
+}
+
+.sidebarNavigationHeading{
+	height: 57px;
+	color: #AAB7BF;
+    font-size: 18px;
+	padding: 15px;
+}
+
+
+.sidebarDisplayOptions > ul{
+	list-style: none;
+	padding: 0px;
+}
+
+.sidebarDisplayOptions li{
+	padding: 15px 0px;
+	height: 54px;
+	cursor: pointer;
+}
+
+.sidebarDisplayOptions li:hover{
+	background-color: #1E7DB5;
+	border-left: 5px solid #E6F416;
+}
+
+.mainContent{
+	background-color: #8d97f2;
+	min-height: 100vh;
+	transition: margin-left 0.3s ease-in-out;
+	overflow: hidden;
+}
+
+.sidebarExpand{
+	width: 250px;
+}
+
+.sidebarCollapse{
+	width: 60px;
+	text-align: center;
+}
+
+.sidebarExpand li{
+	padding: 15px 27px;
+
+}
+
+.sidebarExpand .sidebarIcons{
+	float: right;
+}
+
+.sidebarExpand .sidebarBars{
+	float: right;
+}
+
+
+.contentHeader{
+	height: 60px;
+	width: 100%;
+	background-color: #1B8DD0;
+	line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}

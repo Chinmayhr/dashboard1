@@ -1,0 +1,157 @@
+<div class="main">
+	<div class="dashboardCards row justify-content-between">
+		<div class="dashboardComponent1 userComponent col-8 offset-2 offset-md-0 col-md-5">
+			<div class="dashboardComponentHeader">
+				<div class="cardLeftArea">
+					<p class="cardNumber">20</p>
+					<p>User Registrations</p>
+				</div>
+				<div class="cardRightArea">
+					<div class="cardIcon"><i class="fas fa-user-plus"></i></div>
+				</div>
+			</div>
+			<div class="dashboardComponentInfoBar">
+				view details
+			</div>
+		</div>
+		<div class="dashboardComponent1 messageComponent col-8 offset-2 offset-md-0 col-md-5">
+			<div class="dashboardComponentHeader">
+				<div class="cardLeftArea">
+					<p class="cardNumber">51</p>
+					<p>Messages</p>
+				</div>
+				<div class="cardRightArea">
+					<div class="cardIcon"><i class="far fa-envelope"></i></div>
+				</div>
+			</div>
+			<div class="dashboardComponentInfoBar">
+				view details
+			</div>
+		</div>
+		<div class="dashboardComponent1 notificationComponent col-8 offset-2 offset-md-0 col-md-5">
+			<div class="dashboardComponentHeader">
+				<div class="cardLeftArea">
+					<p class="cardNumber">250</p>
+					<p>Notifications</p>
+				</div>
+				<div class="cardRightArea">
+					<div class="cardIcon"><i class="far fa-bell"></i></div>
+				</div>
+			</div>
+			<div class="dashboardComponentInfoBar">
+				view details
+			</div>
+		</div>
+		<div class="dashboardComponent1 subscriptionComponent col-8 offset-2 offset-md-0 col-md-5">
+			<div class="dashboardComponentHeader">
+				<div class="cardLeftArea">
+					<p class="cardNumber">42</p>
+					<p>Subscriptions</p>
+				</div>
+				<div class="cardRightArea">
+					<div class="cardIcon"><i class="far fa-bookmark"></i></div>
+				</div>
+			</div>
+			<div class="dashboardComponentInfoBar">
+				view details
+			</div>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-12">
+			<div class="chartDistribution card">
+				<div class="card-header">User Distribution</div>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-md-6">
+						<canvas baseChart width="400px" height="400px"
+						[data]="pieChartData"
+						[labels]="pieChartLabels"
+						legend="true"
+						[chartType]="pieChartType">
+					</canvas>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="truth-Table">
+						<table class="table table-striped">
+							<tr>
+								<th>Browsers</th>
+								<th>User Count</th>
+							</tr>
+							<tr>
+								<td>Chrome</td>
+								<td>4500</td>
+							</tr>
+							<tr>
+								<td>Opera</td>
+								<td>1000</td>
+							</tr>
+							<tr>
+								<td>Firefox</td>
+								<td>2200</td>
+							</tr>
+							<tr>
+								<td>Safari</td>
+								<td>3254</td>
+							</tr>
+							<tr>
+								<td>Internet Explorer</td>
+								<td>2500</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="widgets row justify-content-between">
+	<div class="box col-12 col-md-7">
+		<span class="lead box-header">
+			Sales Graph
+		</span>
+		<div class="salesGraph">
+			<canvas baseChart width="400px" height="400px"
+			[datasets]="lineChartData"
+			[labels]="lineChartLabels"
+			legend="true"
+			chartType="line">
+		</canvas>
+	</div>
+</div>
+<div class="chatBox box col-12 col-md-4">
+	<div class="chatWindowHeader">
+		<div class="leftSection">
+			<span class="chatOnlineIndicator"><i class="fas fa-circle"></i></span>
+			<span>Jerry</span>
+		</div>
+		<div class="rightSection">
+			<span><i class="fas fa-minus"></i></span>
+		</div>
+	</div>
+	<div class="chatWindow">
+		<div *ngFor="let message of messages">
+			<div class="chatMessage" *ngIf="message.from == 'Tom';else recieverBlock">
+				<div class="chatMessageImage leftSection"><img class=" chatWindowDP" [src]="message.image"></div>
+				<div class="chatSingleMessage"><span>{{message.message}}</span></div>
+			</div>
+			<ng-template #recieverBlock>
+				<div class="chatMessage">
+					<div class="chatSingleMessage"><span>{{message.message}}</span></div>
+					<div class="chatMessageImage rightSection"><img class=" chatWindowDP" [src]="message.image"></div>
+				</div>
+			</ng-template>
+		</div>
+	</div>
+	<div class="chatWindowMessageSendingBar">
+		<div class="input-group chatWindowMessageWrapper">
+			<input type="text" class="chatMessageInput form-control" placeholder="Type a message!">
+			<div class="chatMessageSendButton bg-primary input-group-append">
+				<span class="bg-primary input-group-text">Send</span>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>

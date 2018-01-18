@@ -1,0 +1,19 @@
+.main{
+	padding: 15px;
+}
+
+button{
+	margin:20px auto;
+}
+
+.card{
+	margin-top: 20px;
+}
+
+.card-header{
+	text-align: center;
+}
+
+.chartButton{
+	padding: 0px 20px;
+}

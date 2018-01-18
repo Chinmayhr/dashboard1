@@ -1,0 +1,214 @@
+<div class="main">
+	<!-- General InfoBoxes -->
+	<div class="infoBoxSection row justify-content-between">
+		<div class="widgetInfoBoxWrapper col-sm-6 col-md-4">
+			<div class="widgetsInfoBox">
+				<div class="widgetsLeftArea widgetRedArea">
+					<div class="widgetsIcon ">
+						<i class="fas fa-cloud-upload-alt"></i>
+					</div>
+				</div>
+				<div class="widgetsRightArea">
+					<div class="widgetsInfoBoxKnob">
+						<p>Uploads</p>
+						<p><strong>250</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="widgetInfoBoxWrapper col-sm-6 col-md-4">
+			<div class="widgetsInfoBox">
+				<div class="widgetsLeftArea widgetGreenArea">
+					<div class="widgetsIcon ">
+						<i class="fas fa-cloud-download-alt"></i>
+					</div>
+				</div>
+				<div class="widgetsRightArea">
+					<div class="widgetsInfoBoxKnob">
+						<p>Downloads</p>
+						<p><strong>890</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="widgetInfoBoxWrapper col-sm-6 offset-sm-3 offset-md-0 col-md-4">
+			<div class="widgetsInfoBox">
+				<div class="widgetsLeftArea widgetYellowArea">
+					<div class="widgetsIcon ">
+						<i class="far fa-envelope"></i>
+					</div>
+				</div>
+				<div class="widgetsRightArea">
+					<div class="widgetsInfoBoxKnob">
+						<p>Messages</p>
+						<p><strong>1520</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Metric Boxes -->
+	<div class="row justify-content-between">
+		<div class="widgetMetricBoxWrapper col-sm-6 col-md-4">
+			<div class="widgetMetricBox widgetRedArea">
+				<div class="widgetMetricBoxHeader">
+					<div class="cardArea">
+						<p class="cardNumber">4500</p>
+						<p>Tweets</p>
+					</div>
+				</div>
+				<div class="widgetMetricBoxInfoBar">
+					view details
+				</div>
+			</div>
+		</div>
+		<div class="widgetMetricBoxWrapper col-sm-6 col-md-4">
+			<div class="widgetMetricBox widgetGreenArea">
+				<div class="widgetMetricBoxHeader">
+					<div class="cardArea">
+						<p class="cardNumber">50</p>
+						<p>New Subscribers</p>
+					</div>
+				</div>
+				<div class="widgetMetricBoxInfoBar">
+					view details
+				</div>
+			</div>
+		</div>
+		<div class="widgetMetricBoxWrapper col-sm-6 offset-sm-3 offset-md-0 col-md-4">
+			<div class="widgetMetricBox widgetYellowArea">
+				<div class="widgetMetricBoxHeader">
+					<div class="cardArea">
+						<p class="cardNumber">42000</p>
+						<p>Likes</p>
+					</div>
+				</div>
+				<div class="widgetMetricBoxInfoBar">
+					view details
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Chat Windows -->
+	<div class="row justify-content-between">
+		<div class="chatWindowWrapper col-12 col-md-6">
+			<div class="chatWindowHeader">
+				<div class="leftSection">
+					<span class="chatOnlineIndicator"><i class="fas fa-circle"></i></span>
+					<span>Jerry</span>
+				</div>
+				<div class="rightSection">
+					<span><i class="fas fa-minus"></i></span>
+				</div>
+			</div>
+			<div class="chatWindow">
+				<div *ngFor="let message of messages">
+					<div class="chatMessage" *ngIf="message.from == 'Tom';else recieverBlock">
+						<div class="chatMessageImage leftSection"><img class=" chatWindowDP" [src]="message.image"></div>
+						<div class="chatSingleMessage"><span>{{message.message}}</span></div>
+					</div>
+					<ng-template #recieverBlock>
+						<div class="chatMessage">
+							<div class="chatSingleMessage"><span>{{message.message}}</span></div>
+							<div class="chatMessageImage rightSection"><img class=" chatWindowDP" [src]="message.image"></div>
+						</div>
+					</ng-template>
+				</div>
+			</div>
+			<div class="chatWindowMessageSendingBar">
+					<div class="input-group chatWindowMessageWrapper">
+						<input type="text" class="chatMessageInput form-control" placeholder="Type a message!">
+						<div class="chatMessageSendButton bg-primary input-group-append">
+							<span class="bg-primary input-group-text">Send</span>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="chatWindowWrapper col-12 col-md-6">
+			<div class="chatWindowHeader">
+				<div class="leftSection">
+					<span class="chatOnlineIndicator"><i class="fas fa-circle"></i></span>
+					<span>Jerry</span>
+				</div>
+				<div class="rightSection">
+					<span *ngIf="chatWindowCollapsed" (click)="chatWindowCollapsed=!chatWindowCollapsed"><i class="fas fa-plus"></i></span>
+					<span *ngIf="!chatWindowCollapsed" (click)="chatWindowCollapsed=!chatWindowCollapsed"><i class="fas fa-minus"></i></span>
+				</div>
+			</div>
+			<div [hidden]="chatWindowCollapsed" >
+				<div class="chatWindow">
+					<div *ngFor="let message of messages">
+						<div class="chatMessage" *ngIf="message.from == 'Tom';else recieverBlock">
+							<div class="chatMessageImage leftSection"><img class=" chatWindowDP" [src]="message.image"></div>
+							<div class="chatSingleMessage"><span>{{message.message}}</span></div>
+						</div>
+						<ng-template #recieverBlock>
+							<div class="chatMessage">
+								<div class="chatSingleMessage"><span>{{message.message}}</span></div>
+								<div class="chatMessageImage rightSection"><img class=" chatWindowDP" [src]="message.image"></div>
+							</div>
+						</ng-template>
+					</div>
+				</div>
+				<div class="chatWindowMessageSendingBar">
+					<div class="input-group chatWindowMessageWrapper">
+						<input type="text" class="chatMessageInput form-control" placeholder="Type a message!">
+						<div class="chatMessageSendButton bg-primary input-group-append">
+							<span class="bg-primary input-group-text">Send</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Progress Bars -->
+	<div class="row justify-content-center">
+		<div class=" col-12">
+			<div class="card">
+				<div class="card-header">
+					Progress Bars
+				</div>
+				<div class="card-body">
+					<span class="progressBarTitles">Basic Progress Bar</span>
+				<div class="progress">
+  					<div class="progress-bar w-75" role="progressbar"></div>
+				</div>
+				<span class="progressBarTitles">Progress Bar with Label</span>
+				<div class="progress">
+  					<div class="progress-bar w-25" role="progressbar">25%</div>
+				</div>
+				<span class="progressBarTitles">Progress Bars with colors</span>
+				<div class="progress">
+  					<div class="progress-bar w-25 bg-primary" role="progressbar"></div>
+				</div>
+				<div class="progress">
+  					<div class="progress-bar w-50 bg-success" role="progressbar">50</div>
+				</div>
+				<div class="progress">
+  					<div class="progress-bar w-75 bg-danger" role="progressbar"></div>
+				</div>
+				<span class="progressBarTitles">Stripped Progress bars</span>
+				<div class="progress">
+  					<div class="progress-bar w-25 progress-bar-striped bg-primary" role="progressbar"></div>
+				</div>
+				<div class="progress">
+  					<div class="progress-bar w-50 progress-bar-striped bg-success" role="progressbar">50</div>
+				</div>
+				<div class="progress">
+  					<div class="progress-bar w-75 progress-bar-striped bg-danger" role="progressbar"></div>
+				</div>
+				<span class="progressBarTitles">Animated Progress bars</span>
+				<div class="progress">
+  					<div class="progress-bar w-25 progress-bar-striped progress-bar-animated bg-primary" role="progressbar"></div>
+				</div>
+				<div class="progress">
+  					<div class="progress-bar w-50 progress-bar-striped progress-bar-animated bg-success" role="progressbar">50</div>
+				</div>
+				<div class="progress">
+  					<div class="progress-bar w-75 progress-bar-striped progress-bar-animated bg-danger" role="progressbar"></div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

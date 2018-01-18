@@ -1,0 +1,20 @@
+<div class="main">
+	<div class="row justify-content-center">
+		<div class="searchWrapper col-12 col-sm-8">
+			<div class="card">
+				<div class="card-header" data-toggle="collapse" data-target="#searchCountry">
+					<span>Search a country</span>
+				</div>
+				<div class="collapse" id="searchCountry">
+					<input class="mapSearchInput" (input)="findCountry($event.target.value)">
+					<div *ngFor="let country of countries; let i=index " >
+						<div *ngIf="i<5" class="mapCountryOption" data-toggle="collapse" data-target="#searchCountry" (click)="displayOnMap(country)" ><span  >{{country.name}}</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mapWrapper">
+		<div id="map" style="height: 300px"></div>
+	</div>
+</div>

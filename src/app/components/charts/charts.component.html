@@ -1,0 +1,57 @@
+<div class="main">
+	<div class="row">
+		<div class="col-12 col-md-6">
+			<div class="card">
+				<div class="card-header">Line Chart</div>
+				<canvas baseChart width="400px" height="400px"
+					[datasets]="lineChartData"
+		            [labels]="lineChartLabels"
+		            legend="true"
+		            chartType="line">
+				</canvas>
+				<button class="col-6 btn btn-primary" (click)="toggleValue('line')">Toggle</button>	
+			</div>
+		</div>
+		<div class="col-12 col-md-6">
+			<div class="card">
+				<div class="card-header">Bar Chart</div>
+				<canvas baseChart width="400px" height="400px"
+					[datasets]="barChartData"
+		            [labels]="barChartLabels"
+		            legend="true"
+		            chartType="bar">
+				</canvas>
+				<button class=" col-6 btn btn-primary" (click)="toggleValue('bar')">Toggle</button>	
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-md-6">
+			<div class="card">
+				<div class="card-header"><span *ngIf="pieChartType == 'pie'">Pie</span><span *ngIf="pieChartType == 'doughnut'">Doughnut</span> Chart</div>
+				<canvas baseChart width="400px" height="400px"
+					[data]="pieChartData"
+		            [labels]="pieChartLabels"
+		            legend="true"
+		            [chartType]="pieChartType">
+				</canvas>
+				<div class="row chartButton justify-content-between">
+				<button class="col-10 offset-1 col-sm-5 offset-sm-0 btn btn-primary" (click)="toggleValue('pie')">Toggle</button>
+				<button class="col-10 offset-1 col-sm-5 offset-sm-0 btn btn-primary" (click)="switchChart(pieChartType)">Switch Chart</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6">
+			<div class="card">
+				<div class="card-header">Bar Chart</div>
+				<canvas baseChart width="400px" height="400px"
+					[datasets]="radarChartData"
+		            [labels]="radarChartLabels"
+		            legend="true"
+		            chartType="radar">
+				</canvas>
+				<button class="col-6 btn btn-primary" (click)="toggleValue('radar')">Toggle</button>	
+			</div>
+		</div>
+	</div>
+</div>

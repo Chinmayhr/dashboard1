@@ -1,0 +1,30 @@
+.mapWrapper{
+	width: 90%;
+    margin-left: 5%;
+    min-width: 200px;
+    min-height: 250px;
+    padding: 20px 0px;
+}
+
+.searchWrapper{
+    padding: 20px 25px;
+}
+
+#searchCountry{
+	text-align: center;
+	margin: 20px 0px;
+}
+
+.mapSearchInput{
+	width: 90%;
+}
+
+.mapCountryOption{
+	border: 2px solid #C4C2C3;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    padding: 10px;
+    margin: 15px auto;
+    cursor: pointer;	
+}

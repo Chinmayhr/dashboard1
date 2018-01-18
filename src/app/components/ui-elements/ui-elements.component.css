@@ -1,0 +1,52 @@
+.card-body{
+	padding: 10px 10px;
+}
+
+.main{
+	padding:10px;
+}
+
+td{
+	vertical-align: middle;
+}
+
+.table{
+	margin-bottom: 0px;
+}
+
+.card{
+	margin: 20px 0px;
+	overflow-x: scroll;
+	padding-bottom: 15px;
+}
+
+.cardButtonIcon{
+	padding-right: 10px;
+}
+
+.buttonWithIcons{
+	text-align: center;
+}
+
+.buttonWithIcons button{
+	margin: 10px;
+	width: 110px;
+}
+
+.input-group{
+	margin:10px 0px;
+}
+
+.inputText{
+	margin: 10px 0px;
+}
+
+.form-check-input{
+	height: 17px;
+	width: 17px;
+}
+
+.buttonsHeader{
+	background: #fff;
+    border: 0;
+}
